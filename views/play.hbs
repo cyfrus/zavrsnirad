@@ -1,0 +1,53 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-6">
+        <form class="searchForm" action="/search" method="post">
+            <div class="form-group play_against">
+                <button type="button" class="" id="playerButton" onclick="chooseOpponent('player', this)">Play against Another Player</button>
+                <button type="button" class="" id="aiButton" onclick="chooseOpponent('ai', this)">Play against AI</button>
+            </div>
+            <input type="hidden" value="" name="opponent" id="hiddenField">
+            <div class="form-group">
+                <select name="seconds" id="" class="form-control">
+                    <option value="5">5 seconds</option>
+                    <option value="10">10 seconds</option>
+                    <option value="30">30 seconds</option>
+                    <option value="60">60 seconds</option>
+                </select>
+            </div>
+            <button type="button" class="form-control" id="search">Search for game</button>
+        </form>
+        <div id="gameLinkContainer" class="text-center">
+
+        </div>
+
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io('//localhost:3000');
+    var searchButtton = document.getElementById("search").addEventListener("click", searchGame);
+    function searchGame() {
+        console.log("EVENT ISPALJEN !");
+        socket.emit("searchGame");
+    }
+    socket.on('gameCreated', function (data) {
+        console.log(data);
+        createGameLink(data);
+    });
+
+    function createGameLink(link) {
+        var exists = document.getElementsByClassName('gameLink')[0];
+        if (exists) {
+            console.log(exists);
+            exists.remove();
+        }
+        var node = document.createElement("a");
+        node.href = "/game/" + link;
+        node.text = "ENTER GAME";
+        node.className = "gameLink";
+        document.getElementById("gameLinkContainer").appendChild(node);
+    }
+
+
+</script>
+<script src="/javascripts/searchForm.js"></script>

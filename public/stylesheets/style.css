@@ -1,0 +1,117 @@
+/* https://coolors.co/0a0908-fcfcfc-af2e1e-30343f-8a817c */
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 70px;
+}
+
+.navigation {
+  margin-bottom: 70px !important;
+}
+
+.form_login {
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  padding: 40px;
+  margin-top: 100px;
+}
+
+.form_login button {
+  border: 1px solid lightgray;
+}
+
+.profile_div {
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding: 20px;
+}
+.profile_image {
+  width: 200px;
+  height: 200px !important;
+  box-sizing:border-box;
+  margin: 20px 0px 20px 0px;
+}
+.profileProps {
+  font-weight: 700;
+}
+.profile_div div {
+  margin-top: 5px;
+}
+
+.playGameButtoN {
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+  background-color: white;
+  border: 1px  solid lightgray;
+  width: 100%;
+  height: 100px;
+  text-transform: uppercase;
+  font-size: 2em;
+  margin-bottom: 50px;
+  font-weight: 800;
+}
+.playGameButtoN:hover {
+  background-color: black;
+  color: white !important;
+  cursor: pointer;
+}
+
+.footer {
+  height: 70px;
+  background-color: #1e1e24;
+  border-top: 2px solid #92140c;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+.play_against button {
+  display:inline;
+  width: 49%;
+  background-color: #FCFCFC;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none !important;
+}
+.activeButton {
+  background-color: #30343F !important;
+  color:#FCFCFC !important;
+}
+.activeButton:focus, .activeButton:active {
+  box-shadow: 0px 0px 0px #AF2E1E !important; 
+}
+.searchForm input,.searchForm button, .searchForm select {
+  border: 1px solid #AF2E1E;
+  color: #0A0908;
+  min-height: 70px !important;
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.5em;
+}
+
+.gameMenu {
+  list-style: none;
+  text-align: center;
+  padding: 20px;
+  font-size: 2.5em;
+  font-family: 'Kanit', sans-serif;
+  
+}
+.gameMenu li {
+
+  padding: 10px;
+}
+.gameMenu li a {
+  color: #373F51; 
+}
+.gameLink {
+  font-family: 'Kanit', sans-serif;
+  font-size: 2em;
+  color: #373F51;
+}
+#gameLinkContainer {
+  margin-top: 20px;
+}
