@@ -64,7 +64,7 @@ router.post("/change", function(req, res, next) {
     req.body.about,
     req.body.password
   );
-  req.session.user.username = req.body.username;
+  req.session.user.username = req.body.usernamce;
   req.session.user["first name"] = req.body.firstName;
   req.session.user["last name"] = req.body.lastName;
   req.session.age = req.body.age;
@@ -138,6 +138,7 @@ router.get("/play", authenticated, function(req, res, next) {
         console.log("nije pronasao protivnika!");
       }
     });
+    
 
     connectedUser.clientSocket.on('disconnect', function() {
         allConnectedClients.delete(connectedUser.id);
