@@ -232,7 +232,7 @@ class Game extends React.Component {
   handleClick(i) {
     const squares = this.state.squares.slice();
     const selected = [];
-    this.checkTurn(i);
+    //this.checkTurn(i);
     console.log("Valid move " + this.state.validMove);
     selected.push(i);
 
@@ -251,7 +251,7 @@ class Game extends React.Component {
       }, )
 
     }
-    else if (this.state.squares[i] === this.state.turn && this.state.validMove) {
+    else if (this.state.squares[i] === this.state.turn) {
       this.setState({
         selected: selected,
         moves: this.availableMoves(squares, this.state.turn, selected)

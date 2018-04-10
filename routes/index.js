@@ -20,12 +20,6 @@ var client = function client(socket) {
   };
 };
 
-var gameObject = {
-  "id" : "",
-  "playerOne" : "",
-  "playerTwo" : "",
-  "moves" : []
-};
 
 var authenticated = function(req, res, next) {
   if (req.session.user) {
@@ -169,7 +163,10 @@ function findOpponent(connectedClients, id) {
 }
 
 router.get("/game/:gameId", authenticated, function(req, res){
-  res.send(req.params);
+  res.io.on('connection', function(socket){
+      console.log("connected to game!");
+  })
+  res.render("game");
 });
 
 router.post("/search", authenticated, function(req, res, next) {
